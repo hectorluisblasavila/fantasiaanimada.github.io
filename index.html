@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Cámara</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>CAMARA IMPORT SAID</h1>
+
+   
+    <div class="container">
+        <video id="video" autoplay playsinline ></video>
+        <img id="logo" src="" style="display: none;">
+        <button id="toggleCameraButton" onclick="toggleCamera()"><i class="fa fa-camera-rotate"></i></button>
+        <button id="captureButton" onclick="tomarFoto()"><i class="fa fa-camera"></i></button>
+        <select id="formatSelector">
+            <option value="webp">WebP</option>
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+            
+        </select>
+        <button class="btn-guias" onclick="toggleGuias()">Guías</button>
+        <div class="contenedor">
+            <div class="guias">
+                <div class="linea vertical-1"></div>
+                <div class="linea vertical-2"></div>
+                <div class="linea horizontal-1"></div>
+                <div class="linea horizontal-2"></div>
+                <div class="circulo"></div>
+            </div>
+        </div>
+        <img src="image/logo.png" class="marca-agua" alt="Logo Marca">
+    </div>
+    
+
+
+    <img id="preview" style="display:none;">
+    <canvas id="canvas" width="500" height="500" style="display:none;"></canvas>
+    
+  
+</body>
+</html>
