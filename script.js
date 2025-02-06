@@ -10,16 +10,24 @@ const preview = document.getElementById('preview');
 const formatSelector = document.getElementById('formatSelector');
 
 
-async function startCamera() {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        document.getElementById('video').srcObject = stream;
-    } catch (error) {
-        console.error("Error al acceder a la cámara:", error);
-    }
+function startCamera() {
+    const constraints = {
+        video: { facingMode: useFrontCamera ? 'user' : 'environment' }
+    };
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(stream => {
+            video.srcObject = stream;
+            if (useFrontCamera) {
+                // Aplica el modo espejo solo para la cámara frontal
+                video.style.transform = 'scaleX(-1)';
+            } else {
+                // Elimina el modo espejo para la cámara posterior
+                video.style.transform = 'scaleX(1)';
+            }
+            video.classList.toggle('mirrored', useFrontCamera);
+        })
+        .catch(err => console.error('Error accediendo a la cámara:', err));
 }
-
-
 
 
 
