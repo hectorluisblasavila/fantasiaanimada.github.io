@@ -142,3 +142,19 @@ video {
 .mirror {
     transform: scaleX(-1); /* Invierte horizontalmente */
 }
+
+
+
+/* Estilos para modo horizontal */
+.horizontal .container {
+    width: 90vw;
+    height: 50vh;
+    max-width: 100%;
+}
+
+/* Estilos para modo vertical */
+.vertical .container {
+    width: 90vw;
+    height: 90vh;
+    max-width: 500px;
+}
