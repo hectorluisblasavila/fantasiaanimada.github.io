@@ -121,8 +121,8 @@ video {
 .marca-agua {
    
     position: absolute;
-    bottom: -00px;
-    left: -15px;
+    bottom: -0px;
+    left: -20px;
     width: 50%;  /* Ajustado al 20% del ancho de la pantalla */
     max-width: 300px; /* Tamaño máximo de 100px */
     opacity: 1; /* Opacidad baja para dar efecto de marca de agua */
@@ -142,4 +142,3 @@ video {
 .mirror {
     transform: scaleX(-1); /* Invierte horizontalmente */
 }
-

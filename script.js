@@ -42,31 +42,6 @@ function toggleCamera() {
     startCamera();
 }
 
-
-
-
-function ajustarElementos() {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        // Modo horizontal (apaisado)
-        document.body.classList.add("horizontal");
-        document.body.classList.remove("vertical");
-    } else {
-        // Modo vertical (retrato)
-        document.body.classList.add("vertical");
-        document.body.classList.remove("horizontal");
-    }
-}
-
-// Detectar cambios en la orientación
-window.addEventListener("resize", ajustarElementos);
-window.addEventListener("orientationchange", ajustarElementos);
-
-// Ejecutar al cargar la página
-ajustarElementos();
-
-
-
-
 function tomarFoto() {
     const videoAspectRatio = video.videoWidth / video.videoHeight;
     
