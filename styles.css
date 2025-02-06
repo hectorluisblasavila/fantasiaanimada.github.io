@@ -12,15 +12,16 @@ body {
 
 
 
-
-video {
-  position: absolute;
-  transform: translate(-50%, -50%); /* Centra el video */
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; /* Evita distorsión y recorta si es necesario */
-  aspect-ratio: 16 / 9;
+.container {
+    position: relative;
+    width: 90vw;  /* 90% del ancho de la pantalla */
+    max-width: 500px;  /* Máximo 500px de ancho */
+    aspect-ratio: 9 / 16; /* Mantiene la relación 16:9 */
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid white;
 }
+
 
 video {
     width: 100%;
@@ -128,3 +129,14 @@ video {
     z-index: 4;
 }
 
+
+
+#video.mirror {
+    transform: scaleX(-1); /* Invierte horizontalmente */
+}
+
+
+
+.mirror {
+    transform: scaleX(-1); /* Invierte horizontalmente */
+}

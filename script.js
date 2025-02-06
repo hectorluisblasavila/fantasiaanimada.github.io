@@ -10,21 +10,16 @@ const preview = document.getElementById('preview');
 const formatSelector = document.getElementById('formatSelector');
 
 
-function startCamera() {
-    const constraints = {
-        video: { facingMode: useFrontCamera ? 'user' : 'environment' }
-    };
-    navigator.mediaDevices.getUserMedia({
-  video: {
-    width: { ideal: 1920 },  // Intenta usar Full HD
-    height: { ideal: 1080 },
-    aspectRatio: 16 / 9
-  }
-})
-.then(stream => {
-  document.getElementById('video').srcObject = stream;
-})
-.catch(error => console.error('Error accediendo a la cámara:', error));
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('video').srcObject = stream;
+    } catch (error) {
+        console.error("Error al acceder a la cámara:", error);
+    }
+}
+
+
 
 
 
