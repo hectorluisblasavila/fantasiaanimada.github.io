@@ -107,7 +107,11 @@ video {
 }
 
 #preview {
-    margin-top: 10px;
+    position: absolute;
+  ;
+    bottom: 10px;
+    right: 80px;
+  
     width: 70px;  /* Ajustado al 80% del ancho de la pantalla */
     height: auto;
     display: none;

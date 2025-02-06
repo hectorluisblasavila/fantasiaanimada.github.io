@@ -46,8 +46,8 @@ function tomarFoto() {
     const videoAspectRatio = video.videoWidth / video.videoHeight;
     
     // Definir el tamaño del canvas basado en la relación 9:16
-    const canvasWidth = Math.min(video.videoWidth);
-    const canvasHeight = (canvasWidth);
+    const canvasWidth = Math.min(video.videoWidth, 1080); // Máximo 1080px de ancho
+    const canvasHeight = (canvasWidth * 16) / 9;
 
     // Ajustar el tamaño del canvas
     canvas.width = canvasWidth;
