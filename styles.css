@@ -108,7 +108,7 @@ video {
 
 #preview {
     margin-top: 10px;
-    width: 100px;  /* Ajustado al 80% del ancho de la pantalla */
+    width: 70px;  /* Ajustado al 80% del ancho de la pantalla */
     height: auto;
     display: none;
     border: 2px solid white;
@@ -117,11 +117,11 @@ video {
 /* Marca de agua (Logo) */
 .marca-agua {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 20px;
+    left: 20px;
     width: 30%;  /* Ajustado al 20% del ancho de la pantalla */
     max-width: 200px; /* Tamaño máximo de 100px */
-    opacity: 0.3; /* Opacidad baja para dar efecto de marca de agua */
+    opacity: 0.8; /* Opacidad baja para dar efecto de marca de agua */
     z-index: 4;
 }
 

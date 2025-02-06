@@ -93,10 +93,10 @@ function tomarFoto() {
       const logoSize = 200; // Tamaño del logo
       const aspectRatio = logo.width / logo.height; // Relación de aspecto del logo
         const logoHeight = logoSize / aspectRatio; // Altura proporcional
-      const logoX = 10; // Posición X (esquina inferior derecha)
-      const logoY = canvas.height - logoHeight - 10; // Posición Y
+      const logoX = 20; // Posición X (esquina inferior derecha)
+      const logoY = canvas.height - logoHeight - 20; // Posición Y
 
-      ctx.globalAlpha = 0.5; // Ajustar opacidad de la marca de agua (50%)
+      ctx.globalAlpha = 1.0; // Ajustar opacidad de la marca de agua (50%)
       ctx.drawImage(logo, logoX, logoY, logoSize, logoHeight); // Dibujar el logo en el canvas
       ctx.globalAlpha = 1.0; // Restaurar opacidad normal
 
