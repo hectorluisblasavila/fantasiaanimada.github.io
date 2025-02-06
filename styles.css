@@ -143,12 +143,3 @@ video {
     transform: scaleX(-1); /* Invierte horizontalmente */
 }
 
-
-
-/* Estilos para modo horizontal */
-.horizontal .marca-agua{
- 
-display: none;
-
-}
-
