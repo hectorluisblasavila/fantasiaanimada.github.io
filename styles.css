@@ -14,11 +14,14 @@ body {
 
 
 video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el video */
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* Ajusta el video para que llene el espacio sin distorsión */
+  object-fit: cover; /* Evita distorsión y recorta si es necesario */
   aspect-ratio: 16 / 9;
-Z-index: 0;
 }
 
 video {
