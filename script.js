@@ -42,6 +42,31 @@ function toggleCamera() {
     startCamera();
 }
 
+
+
+
+function ajustarElementos() {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        // Modo horizontal (apaisado)
+        document.body.classList.add("horizontal");
+        document.body.classList.remove("vertical");
+    } else {
+        // Modo vertical (retrato)
+        document.body.classList.add("vertical");
+        document.body.classList.remove("horizontal");
+    }
+}
+
+// Detectar cambios en la orientación
+window.addEventListener("resize", ajustarElementos);
+window.addEventListener("orientationchange", ajustarElementos);
+
+// Ejecutar al cargar la página
+ajustarElementos();
+
+
+
+
 function tomarFoto() {
     const videoAspectRatio = video.videoWidth / video.videoHeight;
     
@@ -69,7 +94,18 @@ function tomarFoto() {
         sx = 0;
         sy = (video.videoHeight - sHeight) / 2;
     }
-
+   // Modo horizontal (16:9)
+   if (videoAspectRatio > (16 / 9)) {
+    sHeight = video.videoHeight;
+    sWidth = (video.videoHeight * 16) / 9;
+    sx = (video.videoWidth - sWidth) / 2;
+    sy = 0;
+} else {
+    sWidth = video.videoWidth;
+    sHeight = (video.videoWidth * 9) / 16;
+    sx = 0;
+    sy = (video.videoHeight - sHeight) / 2;
+}
     // Si es la cámara frontal, reflejar la imagen
     if (useFrontCamera) {
         ctx.translate(canvasWidth, 0);
@@ -135,21 +171,3 @@ function toggleGuias() {
 }
 
 
-function ajustarElementos() {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        // Modo horizontal (apaisado)
-        document.body.classList.add("horizontal");
-        document.body.classList.remove("vertical");
-    } else {
-        // Modo vertical (retrato)
-        document.body.classList.add("vertical");
-        document.body.classList.remove("horizontal");
-    }
-}
-
-// Detectar cambios en la orientación
-window.addEventListener("resize", ajustarElementos);
-window.addEventListener("orientationchange", ajustarElementos);
-
-// Ejecutar al cargar la página
-ajustarElementos();
