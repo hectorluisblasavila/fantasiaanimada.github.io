@@ -146,15 +146,9 @@ video {
 
 
 /* Estilos para modo horizontal */
-.horizontal .container {
-    width: 90vw;
-    height: 50vh;
-    max-width: 100%;
+.horizontal .marca-agua{
+ 
+display: none;
+
 }
 
-/* Estilos para modo vertical */
-.vertical .container {
-    width: 90vw;
-    height: 90vh;
-    max-width: 500px;
-}
